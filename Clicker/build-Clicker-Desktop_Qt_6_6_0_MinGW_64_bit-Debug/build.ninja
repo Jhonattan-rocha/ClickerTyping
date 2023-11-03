@@ -192,7 +192,7 @@ build Clicker_autogen/timestamp Clicker_autogen/mocs_compilation.cpp | ${cmake_n
 #############################################
 # Phony custom command for CMakeFiles\Clicker_autogen_timestamp_deps
 
-build CMakeFiles/Clicker_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Clicker_autogen_timestamp_deps: phony C$:/Qt/6.6.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.6.0/mingw_64/./bin/uic.exe C$:/Qt/6.6.0/mingw_64/./bin/moc.exe C$:/Qt/6.6.0/mingw_64/lib/libQt6Widgets.a
+build CMakeFiles/Clicker_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/Clicker_autogen_timestamp_deps: phony C$:/Qt/6.6.0/mingw_64/./bin/uic.exe C$:/Qt/6.6.0/mingw_64/./bin/moc.exe C$:/Qt/6.6.0/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.6.0/mingw_64/lib/libQt6Core.a
 
 
 #############################################

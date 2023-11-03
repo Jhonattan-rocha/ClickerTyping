@@ -65,6 +65,7 @@ public:
     QPushButton *recordButton;
     QPushButton *reset;
     QPushButton *start;
+    QPushButton *update;
     QSpacerItem *horizontalSpacer_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -305,6 +306,15 @@ public:
 
         horizontalLayout_2->addWidget(start);
 
+        update = new QPushButton(centralwidget);
+        update->setObjectName("update");
+        sizePolicy2.setHeightForWidth(update->sizePolicy().hasHeightForWidth());
+        update->setSizePolicy(sizePolicy2);
+        update->setMinimumSize(QSize(150, 40));
+        update->setMaximumSize(QSize(200, 50));
+
+        horizontalLayout_2->addWidget(update);
+
         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_6);
@@ -346,6 +356,7 @@ public:
         recordButton->setText(QCoreApplication::translate("Clicker", "Gravar Passos", nullptr));
         reset->setText(QCoreApplication::translate("Clicker", "Resetar", nullptr));
         start->setText(QCoreApplication::translate("Clicker", "Come\303\247ar", nullptr));
+        update->setText(QCoreApplication::translate("Clicker", "Atualizar", nullptr));
     } // retranslateUi
 
 };

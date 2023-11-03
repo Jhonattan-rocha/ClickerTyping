@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::Clicker)
 {
     ui->setupUi(this);
+    UiStatic = this;
 }
 
 MainWindow::~MainWindow()
@@ -238,8 +239,9 @@ void MainWindow::typeText(const std::string& text, int delay) {
 
 void MainWindow::updateClikSaves(){
     fs::path dic = "..\\PassosSalvos";
+    UiStatic->ui->listaconjuntopassos->clear();
     if(!fs::exists(dic)){
-        dic = ".\\PassosSalvos";
+        dic = "..\\PassosSalvos";
         if(fs::exists(dic)){
             std::vector<std::string> paths = listDir(dic);
 

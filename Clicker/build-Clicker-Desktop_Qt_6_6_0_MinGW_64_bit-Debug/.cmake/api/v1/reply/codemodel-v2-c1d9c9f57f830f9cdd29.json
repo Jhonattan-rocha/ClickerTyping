@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ab308e55415132aed6de.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Clicker",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Clicker::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Clicker-Debug-ad92228a0b4af0f66fdd.json",
+					"name" : "Clicker",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Clicker_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Clicker_autogen-Debug-cccc8e5898b3427c7829.json",
+					"name" : "Clicker_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Clicker_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Clicker_autogen_timestamp_deps-Debug-6783e7d2d1ab829ae175.json",
+					"name" : "Clicker_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

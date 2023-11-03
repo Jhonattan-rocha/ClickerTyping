@@ -50,7 +50,7 @@ protected:
                     //                    QListWidgetItem *item = new QListWidgetItem(roleDataMap[Qt::DisplayRole].toString());
                     //                    addItem(item);
                     fs::path path = roleDataMap[Qt::DisplayRole].toString().toStdString();
-                    updatePaths(path);
+                    this->updatePaths(path);
                     event->setDropAction(Qt::CopyAction);
                     event->accept();
                 }

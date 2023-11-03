@@ -64,6 +64,7 @@ public slots:
         connect(ui->recordButton, SIGNAL(clicked()), this, SLOT(showMsgRecord()));
         connect(ui->start, SIGNAL(clicked()), this, SLOT(execMacroClick()));
         connect(ui->reset, SIGNAL(clicked()), this, SLOT(resetClicks()));
+        connect(ui->update, SIGNAL(clicked()), this, SLOT(updateClikSaves()));
         //        ui->listaconjuntopassos
         //        ui->visualizarpassos
 
@@ -75,7 +76,7 @@ public slots:
                 msgBox.setText("Erro ao criar o diretório de passos salvos");
 
                     // Adicione botões personalizados usando setStandardButtons
-                    QPushButton* customButton1 = msgBox.addButton("Criar aqui", QMessageBox::ActionRole);
+                QPushButton* customButton1 = msgBox.addButton("Criar aqui", QMessageBox::ActionRole);
                 QPushButton* customButton2 = msgBox.addButton("Cancelar", QMessageBox::ActionRole);
 
                 // Defina os botões padrão (opcional)

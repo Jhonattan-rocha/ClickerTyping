@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
         }
     }
     w = new MainWindow; // Crie uma instância dinamicamente
-//    w->initialize();
-//    w->updateClikSaves();
+    w->initialize();
+    w->updateClikSaves();
     w->show();
     int result = a.exec();
 
