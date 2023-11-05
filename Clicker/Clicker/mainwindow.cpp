@@ -23,6 +23,7 @@
 #include <unordered_map>
 #include <conio.h>
 #include <random>
+#include <exception>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -37,8 +38,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-std::vector<POINT> MainWindow::passos;  // Defina a variável estática aqui
+std::vector<Action> MainWindow::actions;  // Defina a variável estática aqui
 MainWindow *MainWindow::UiStatic;
 
 void MainWindow::recoverClicks(fs::path path){
@@ -51,17 +51,29 @@ void MainWindow::recoverClicks(fs::path path){
         QJsonDocument jsonDoc = QJsonDocument::fromJson(data);
         if (jsonDoc.isObject()) {
             QJsonObject jsonObject = jsonDoc.object();
-            QJsonArray clicks = jsonObject["clicks"].toArray();
-            for(int i = 0; i<clicks.size(); i++){
-                QJsonArray click = clicks[i].toArray();
-                ui->visualizarpassos->addItem("X: " + click[0].toString() + ", Y: " + click[1].toString());
-                POINT p;
-                p.x = click[0].toInt();
-                p.y = click[1].toInt();
-                this->passos.push_back(p);
+            QJsonArray dados = jsonObject["passos"].toArray();
+            for(int i = 0; i<dados.size(); i++){
+                if(dados[i].isString()){
+                    POINT p;
+                    long vkCode = std::stoi(dados[i].toString().toStdString(), nullptr, 16);
+                    ui->visualizarpassos->addItem(QString::fromStdString("key: " + dados[i].toString().toStdString()));
+                    this->actions.push_back(Action(Action::KeyPress, p, vkCode));
+                }else{
+                    QJsonArray click = dados[i].toArray();
+                    ui->visualizarpassos->addItem("X: " + click[0].toString() + ", Y: " + click[1].toString());
+                    long x = click[0].toString().toLong();
+                    long y = click[1].toString().toLong();
+                    POINT p;
+                    p.x = x;
+                    p.y = y;
+                    this->actions.push_back(Action(Action::Click, p, 0));
+                }
             }
         }
     }
+
+    removeKeyboardHook();
+    removeMouseHook();
 }
 
 
@@ -79,23 +91,32 @@ void MainWindow::recordClicks() {
 
     QJsonArray Passos;
 
-    for (int i = 0; i < passos.size(); i++) {
-        QJsonArray cods;
+    for (int i = 0; i < actions.size(); i++) {
+        if(actions[i].type == Action::Click){
+            QJsonArray cods;
 
-        // Crie objetos QJsonValue com os valores inteiros x e y
-        QJsonValue xValue(QJsonValue::fromVariant(QVariant::fromValue(passos[i].x)));
-        QJsonValue yValue(QJsonValue::fromVariant(QVariant::fromValue(passos[i].y)));
+            // Crie objetos QJsonValue com os valores inteiros x e y
+            QJsonValue xValue(QJsonValue::fromVariant(QVariant::fromValue(actions[i].cord.x)));
+            QJsonValue yValue(QJsonValue::fromVariant(QVariant::fromValue(actions[i].cord.y)));
 
-        // Adicione os objetos QJsonValue ao QJsonArray cods
-        cods.append(xValue);
-        cods.append(yValue);
+            // Adicione os objetos QJsonValue ao QJsonArray cods
+            cods.append(xValue);
+            cods.append(yValue);
 
-        // Adicione o QJsonArray cods ao QJsonArray Passos
-        Passos.append(cods);
+            // Adicione o QJsonArray cods ao QJsonArray Passos
+            Passos.append(cods);
+        }else{
+            std::stringstream ss;
+            ss << "0x" << std::hex << actions[i].key;
+            std::string vkCodeStr = ss.str();
+            QJsonValue vkCodeQValue(QString::fromStdString(vkCodeStr));
+
+            Passos.append(vkCodeQValue);
+        }
     }
 
 
-    jsonObject["clicks"] = Passos;
+    jsonObject["passos"] = Passos;
 
     QJsonDocument jsonDoc(jsonObject);
     QString fileName = QString::number(numero_aleatorio) + "dados.json";
@@ -106,22 +127,33 @@ void MainWindow::recordClicks() {
     }
 
     this->updateClikSaves();
+
+    removeKeyboardHook();
+    removeMouseHook();
 }
 
 void MainWindow::showMsgRecord() {
-    if(recording){
-        ui->groupMsgRecord->setVisible(true);
-        ui->recordButton->setText("Parar Gravação");
-        QMessageBox::information(nullptr, "Gravando", "Gravando clickes");
-        recording = false;
-        installMouseHook();
-    }else{
-        recording = true;
-        ui->groupMsgRecord->setVisible(false);
-        ui->recordButton->setText("Gravar Passos");
-        QMessageBox::information(nullptr, "Parando gravação", "Parando a gravação clickes");
+    try{
+        if(recording){
+            ui->groupMsgRecord->setVisible(true);
+            ui->recordButton->setText("Parar Gravação");
+    //        QMessageBox::information(nullptr, "Gravando", "Gravando clickes");
+            recording = false;
+            installMouseHook();
+            installKeyboardHook();
+        }else{
+            recording = true;
+            ui->groupMsgRecord->setVisible(false);
+            ui->recordButton->setText("Gravar Passos");
+    //        QMessageBox::information(nullptr, "Parando gravação", "Parando a gravação clickes");
+            removeMouseHook();
+            removeKeyboardHook();
+            recordClicks();
+        }
+    }catch(const std::exception& e){
+        QMessageBox::information(nullptr, "Gravando", "Erro inesperado ocorreu: " + QString::fromStdString(e.what()));
         removeMouseHook();
-        recordClicks();
+        removeKeyboardHook();
     }
 }
 
@@ -173,19 +205,28 @@ std::vector<std::string> MainWindow::listDir(fs::path diretorio) {
 
 
 void MainWindow::execMacroClick(){
+    macro.detach();
+
     int i = ui->repeticoes->text().toInt();
     for(int j = 0; j<i; j++){
-        for (int i = 0; i < passos.size(); i++) {
-            SetCursorPos(passos[i].x, passos[i].y);
-            click();
-            Sleep(ui->clickSpeed->text().toInt());
+        for (int i = 0; i < actions.size(); i++) {
+            if(actions[i].type == Action::Click){
+                SetCursorPos(actions[i].cord.x, actions[i].cord.y);
+                click();
+                Sleep(ui->clickSpeed->text().toInt());
+            }else{
+                int v = ui->clickSpeed->text().toInt();
+                typeText(actions[i].key, v);
+            }
         }
     }
 }
 
 void MainWindow::resetClicks(){
     UiStatic->ui->visualizarpassos->clear();
-    passos.clear();
+    actions.clear();
+    removeMouseHook();
+    removeKeyboardHook();
 }
 
 
@@ -195,45 +236,33 @@ void MainWindow::click() {
 }
 
 
-void MainWindow::pressKey(WORD keyCode, bool shift) {
-    INPUT input[2];
-    input[0].type = INPUT_KEYBOARD;
-    input[0].ki.wScan = 0;
-    input[0].ki.time = 0;
-    input[0].ki.dwExtraInfo = 0;
-    input[0].ki.wVk = shift ? VK_SHIFT : 0; // Se shift for verdadeiro, pressione a tecla Shift
-    input[0].ki.dwFlags = 0; // 0 para pressionar a tecla
+void MainWindow::pressKeys(const std::vector<WORD>& keyCodes) {
+    std::vector<INPUT> inputs;
+    inputs.reserve(keyCodes.size() * 2);
 
-    input[1] = input[0];
-    input[1].ki.dwFlags = KEYEVENTF_KEYUP; // KEYEVENTF_KEYUP para liberar a tecla
+    for (WORD keyCode : keyCodes) {
+        INPUT pressEvent = {0};
+        pressEvent.type = INPUT_KEYBOARD;
+        pressEvent.ki.wVk = keyCode;
 
-    SendInput(2, input, sizeof(INPUT));
+        INPUT releaseEvent = {0};
+        releaseEvent.type = INPUT_KEYBOARD;
+        releaseEvent.ki.wVk = keyCode;
+        releaseEvent.ki.dwFlags = KEYEVENTF_KEYUP;
 
-    if (keyCode != 0) {
-        input[0].ki.wVk = keyCode;
-        SendInput(1, input, sizeof(INPUT));
-        input[1].ki.dwFlags = KEYEVENTF_KEYUP;
-        SendInput(1, input, sizeof(INPUT));
+        inputs.push_back(pressEvent);
+        inputs.push_back(releaseEvent);
     }
+
+    SendInput(static_cast<UINT>(inputs.size()), inputs.data(), sizeof(INPUT));
 }
 
-void MainWindow::typeText(const std::string& text, int delay) {
-    for (char t : text) {
-        WORD keyCode = VkKeyScan(t);
-        if (keyCode) {
-            // Verifique se é uma letra maiúscula e ative o Shift, se necessário
-            bool isUpperCase = (keyCode & 0x0100) != 0;
-            if (isUpperCase) {
-                pressKey(VK_SHIFT);
-            }
-            // Pressione a tecla correspondente ao caractere
-            pressKey(keyCode & 0xFF);
-            Sleep(delay);
-            // Libere o Shift, se ativado
-            if (isUpperCase) {
-                pressKey(VK_SHIFT, true);
-            }
-        }
+void MainWindow::typeText(const long keyCode, int delay) {
+    if (keyCode) {
+        std::vector<WORD> keyCodes;
+        keyCodes.push_back(keyCode);
+        pressKeys(keyCodes);
+        Sleep(delay);
     }
 }
 

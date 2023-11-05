@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "action.h"
 #include "ui_mainwindow.h"
 #include <QMainWindow>
 #include <QApplication>
@@ -25,6 +26,7 @@
 #include <unordered_map>
 #include <conio.h>
 #include <random>
+#include <thread>
 
 namespace fs = std::filesystem;
 
@@ -50,11 +52,15 @@ public slots:
     void execMacroClick();
     void resetClicks();
     void click();
-    void pressKey(WORD keyCode, bool shift = false);
-    void typeText(const std::string& text, int delay = 100);
+    void pressKeys(const std::vector<WORD>& keyCodes);
+    void typeText(const long keyCode, int delay = 100);
     void onItemPressed(QListWidgetItem* item);
     void onItemDropped(QListWidgetItem* item);
     void updateClikSaves();
+
+    void startMacro(){
+        macro = std::thread(&MainWindow::execMacroClick, this);
+    }
 
 public slots:
 
@@ -62,9 +68,10 @@ public slots:
         ui->groupMsgRecord->setVisible(false);
 
         connect(ui->recordButton, SIGNAL(clicked()), this, SLOT(showMsgRecord()));
-        connect(ui->start, SIGNAL(clicked()), this, SLOT(execMacroClick()));
+        connect(ui->start, SIGNAL(clicked()), this, SLOT(startMacro()));
         connect(ui->reset, SIGNAL(clicked()), this, SLOT(resetClicks()));
         connect(ui->update, SIGNAL(clicked()), this, SLOT(updateClikSaves()));
+//        connect(ui->tecladobutton, SIGNAL(clicked()), this, SLOT(teclado()));
         //        ui->listaconjuntopassos
         //        ui->visualizarpassos
 
@@ -101,10 +108,12 @@ private:
     Ui::Clicker *ui;
 
     bool recording = true;
-    static std::vector<POINT> passos;
+    bool tel = true;
     HHOOK mouseHook;
     HHOOK keyboardHook;
     static MainWindow *UiStatic;
+    static std::vector<Action> actions;
+    std::thread macro;
 
     void installMouseHook() {
         mouseHook = SetWindowsHookEx(WH_MOUSE_LL, mouseHookProc, GetModuleHandle(nullptr), 0);
@@ -126,7 +135,7 @@ private:
             if (wParam == WM_LBUTTONDOWN) {
                 POINT click;
                 GetCursorPos(&click);
-                passos.push_back(click);
+                actions.push_back(Action(Action::Click, click, 0));
 
                 QString item = "X: " + QString::number(click.x) + ", Y: " + QString::number(click.y);
                 UiStatic->ui->visualizarpassos->addItem(item);
@@ -139,6 +148,7 @@ private:
         keyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, keyboardHookProc, GetModuleHandle(nullptr), 0);
         if (keyboardHook == nullptr) {
             QMessageBox::critical(this, "Error", "Failed to install keyboard hook.");
+            QApplication::quit();
         }
     }
 
@@ -154,7 +164,19 @@ private:
             if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
                 KBDLLHOOKSTRUCT* pkbhs = (KBDLLHOOKSTRUCT*)lParam;
                 int key = pkbhs->vkCode;
-                // Aqui você pode lidar com a tecla pressionada
+                POINT nul;
+
+                QString item = "Key: " + QString::number(key);
+                UiStatic->ui->visualizarpassos->addItem(item);
+                actions.push_back(Action(Action::KeyPress, nul, key));
+
+                // Converter int para string
+                // std::stringstream ss;
+                // ss << "0x" << std::hex << key;
+                // std::string vkCodeStr = ss.str();
+
+                // Converter a string hexadecimal de volta para o valor vkCode
+                // int vkCode = std::stoi(vkCodeStr, nullptr, 16);
             }
         }
         return CallNextHookEx(nullptr, nCode, wParam, lParam);

@@ -365,6 +365,7 @@ C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwind
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/sstream.tcc
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/std_abs.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/std_function.h
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/std_thread.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algo.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algobase.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_bvector.h
@@ -390,6 +391,7 @@ C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwind
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/streambuf_iterator.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/string_view.tcc
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stringfwd.h
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/this_thread_sleep.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/uniform_int_dist.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/unique_ptr.h
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/unordered_map.h
@@ -453,6 +455,7 @@ C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwind
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string_view
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/system_error
+ mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/thread
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/bessel_function.tcc
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/beta_function.tcc
  mdp:C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/tr1/ell_integral.tcc
@@ -712,6 +715,7 @@ C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwind
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wow64apiset.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wtypes.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wtypesbase.h
+ mdp:C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/action.h
  mdp:C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/customlistwidget.h
  mdp:C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/include/ui_mainwindow.h
  uic:ui_mainwindow.h
@@ -719,3 +723,4 @@ C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/main.cpp
 C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwindow.cpp
 C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/customlistwidget.h
 C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/customlistwidget.cpp
+C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/action.h

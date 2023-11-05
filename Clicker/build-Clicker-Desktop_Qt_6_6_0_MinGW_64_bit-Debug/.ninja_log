@@ -1,22 +1,53 @@
 # ninja log v5
-3	29	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
-11	458	7207153324262830	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
-11	458	7207153324262830	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
-38	822	7207156288629390	build.ninja	21ba3422f3520d7b
-484	5316	7207153372764572	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
-11	458	7207153324262830	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
-11	458	7207153324262830	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
-479	4902	7207153368692740	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
-474	5199	7207153371646913	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
-5317	5875	7207153378383736	Clicker.exe	5ac09ff9f3aa0112
-490	5134	7207153370947282	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
-4	30	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
-12	2547	7207157673168200	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
-12	2547	7207157673168200	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
-12	2547	7207157673168200	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
-12	2547	7207157673168200	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
-2548	8321	7207157735669725	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
-2557	8567	7207157738118699	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
-2574	8625	7207157738699867	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
-2565	8724	7207157739683146	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
-8724	9305	7207157745471065	Clicker.exe	5ac09ff9f3aa0112
+16	2589	7208315094905751	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+16	2589	7208315094905751	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+5	40	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
+2613	8309	7208315155446629	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
+16	2589	7208315094905751	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+38	822	7208156668972818	build.ninja	21ba3422f3520d7b
+2589	7686	7208315149235561	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
+16	2589	7208315094905751	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+2595	8394	7208315156272994	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
+8394	9300	7208315165305551	Clicker.exe	5ac09ff9f3aa0112
+2601	7873	7208315151026909	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
+4	41	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
+14	3029	7208318745531070	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+14	3029	7208318745531070	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+14	3029	7208318745531070	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+14	3029	7208318745531070	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+3036	8463	7208318804223465	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
+3043	8557	7208318805158049	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
+3029	8989	7208318809452749	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
+3050	8994	7208318809508292	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
+8994	9849	7208318818041779	Clicker.exe	5ac09ff9f3aa0112
+3	30	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
+10	2079	7208323126215307	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+10	2079	7208323126215307	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+10	2079	7208323126215307	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+10	2079	7208323126215307	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+2084	7090	7208323179617916	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
+2095	7221	7208323180827573	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
+2090	7525	7208323183911572	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
+2079	7786	7208323186570489	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
+7787	8680	7208323195380695	Clicker.exe	5ac09ff9f3aa0112
+3	30	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
+10	2094	7208325357050872	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+10	2094	7208325357050872	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+10	2094	7208325357050872	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+10	2094	7208325357050872	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+2099	6795	7208325407280534	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
+2105	6918	7208325408534504	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
+2115	7314	7208325412594291	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
+2094	7359	7208325413016260	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
+7360	8233	7208325421751373	Clicker.exe	5ac09ff9f3aa0112
+3	32	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9
+15	487	7208327136940918	Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+15	487	7208327136940918	Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+15	487	7208327136940918	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/timestamp	3fe9a0a9ad2aa6c7
+15	487	7208327136940918	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/Clicker_autogen/mocs_compilation.cpp	3fe9a0a9ad2aa6c7
+503	6123	7208327193304498	CMakeFiles/Clicker.dir/main.cpp.obj	c3fa242519168386
+527	6226	7208327194370983	CMakeFiles/Clicker.dir/customlistwidget.cpp.obj	dca8ba2804f8b18c
+509	6627	7208327198238640	CMakeFiles/Clicker.dir/Clicker_autogen/mocs_compilation.cpp.obj	6b098b4c74a2e53f
+515	6714	7208327199132611	CMakeFiles/Clicker.dir/mainwindow.cpp.obj	eb42628ddac6fc46
+6715	7595	7208327207871929	Clicker.exe	5ac09ff9f3aa0112
+4	31	0	C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/build-Clicker-Desktop_Qt_6_6_0_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	8dd53851a0f524d9

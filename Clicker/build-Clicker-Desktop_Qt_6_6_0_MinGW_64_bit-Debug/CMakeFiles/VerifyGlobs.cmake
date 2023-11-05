@@ -62,6 +62,7 @@ endif()
 # _directory_contents at C:/Qt/6.6.0/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/*.h")
 set(OLD_GLOB
+  "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/action.h"
   "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/customlistwidget.h"
   "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainWindowInstance.h"
   "C:/Users/Jhinattan Rocha/Documents/GitHub/ClickerTyping/Clicker/Clicker/mainwindow.h"

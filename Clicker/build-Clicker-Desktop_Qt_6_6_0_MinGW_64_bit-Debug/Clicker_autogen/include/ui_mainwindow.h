@@ -59,7 +59,7 @@ public:
     QHBoxLayout *gravacaolayout;
     QSpacerItem *horizontalSpacer_3;
     QLabel *labelRecord;
-    QLabel *recordIcon;
+    QLabel *iconrec;
     QSpacerItem *horizontalSpacer_4;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *recordButton;
@@ -74,9 +74,9 @@ public:
     {
         if (Clicker->objectName().isEmpty())
             Clicker->setObjectName("Clicker");
-        Clicker->resize(800, 600);
+        Clicker->resize(822, 595);
         QIcon icon;
-        icon.addFile(QString::fromUtf8("1536475.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("../../../../c++files/outrosteste/1536475.png"), QSize(), QIcon::Normal, QIcon::Off);
         Clicker->setWindowIcon(icon);
         centralwidget = new QWidget(Clicker);
         centralwidget->setObjectName("centralwidget");
@@ -99,7 +99,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
-        label->setMinimumSize(QSize(350, 70));
+        label->setMinimumSize(QSize(467, 70));
         label->setMaximumSize(QSize(0, 0));
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
@@ -250,15 +250,15 @@ public:
 
         gravacaolayout->addWidget(labelRecord);
 
-        recordIcon = new QLabel(groupMsgRecord);
-        recordIcon->setObjectName("recordIcon");
-        sizePolicy.setHeightForWidth(recordIcon->sizePolicy().hasHeightForWidth());
-        recordIcon->setSizePolicy(sizePolicy);
-        recordIcon->setMaximumSize(QSize(60, 60));
-        recordIcon->setPixmap(QPixmap(QString::fromUtf8("3998038.png")));
-        recordIcon->setScaledContents(true);
+        iconrec = new QLabel(groupMsgRecord);
+        iconrec->setObjectName("iconrec");
+        sizePolicy.setHeightForWidth(iconrec->sizePolicy().hasHeightForWidth());
+        iconrec->setSizePolicy(sizePolicy);
+        iconrec->setMaximumSize(QSize(60, 60));
+        iconrec->setPixmap(QPixmap(QString::fromUtf8("../../../../c++files/outrosteste/3998038.png")));
+        iconrec->setScaledContents(true);
 
-        gravacaolayout->addWidget(recordIcon);
+        gravacaolayout->addWidget(iconrec);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -312,6 +312,7 @@ public:
         update->setSizePolicy(sizePolicy2);
         update->setMinimumSize(QSize(150, 40));
         update->setMaximumSize(QSize(200, 50));
+        update->setCursor(QCursor(Qt::PointingHandCursor));
 
         horizontalLayout_2->addWidget(update);
 
@@ -328,7 +329,7 @@ public:
         Clicker->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Clicker);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 822, 22));
         Clicker->setMenuBar(menubar);
         statusbar = new QStatusBar(Clicker);
         statusbar->setObjectName("statusbar");
@@ -342,7 +343,7 @@ public:
     void retranslateUi(QMainWindow *Clicker)
     {
         Clicker->setWindowTitle(QCoreApplication::translate("Clicker", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("Clicker", "Automatiza\303\247\303\243o de click", nullptr));
+        label->setText(QCoreApplication::translate("Clicker", "Automatiza\303\247\303\265es de Click/Teclado", nullptr));
         label_2->setText(QCoreApplication::translate("Clicker", "Passos: ", nullptr));
         label_3->setText(QCoreApplication::translate("Clicker", "Ultmos salvos:", nullptr));
         groupBox_3->setTitle(QString());
@@ -352,7 +353,7 @@ public:
         repeticoes->setText(QCoreApplication::translate("Clicker", "1", nullptr));
         groupMsgRecord->setTitle(QCoreApplication::translate("Clicker", "Mensagem", nullptr));
         labelRecord->setText(QCoreApplication::translate("Clicker", "Gravando", nullptr));
-        recordIcon->setText(QString());
+        iconrec->setText(QString());
         recordButton->setText(QCoreApplication::translate("Clicker", "Gravar Passos", nullptr));
         reset->setText(QCoreApplication::translate("Clicker", "Resetar", nullptr));
         start->setText(QCoreApplication::translate("Clicker", "Come\303\247ar", nullptr));
